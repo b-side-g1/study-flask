@@ -1,18 +1,18 @@
 [
 	{
-		"id": "test1",
-		"pwd": "1234"
+		"username": "test1",
+		"password": "1234"
 	},
 	{
-		"id": "test2",
-		"pwd": "1234"
+		"username": "test2",
+		"password": "1234"
 	},
 	{
-		"id": "test3",
-		"pwd": "1234"
+		"username": "test3",
+		"password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
 	},
 	{
-		"id": "test3",
-		"pwd": null
+		"username": "test4",
+		"password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
 	}
 ]

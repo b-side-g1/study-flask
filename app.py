@@ -1,10 +1,13 @@
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
-import json
+import json, resources
+from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
 app.config['BUNDLE_ERRORS'] = True
 app.config['JSON_AS_ASCII'] = False
+app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
+jwt = JWTManager(app)
 api = Api(app)
 
 DB_FILE = './database/users.json'
@@ -39,6 +42,12 @@ class UserList(Resource):
             json.dump(json_data, f, indent="\t")
         return user, 200
 
-api.add_resource(UserList, '/users')
+
+# api.add_resource(UserList, '/users')
+api.add_resource(resources.UserRegistration, '/registration')
+api.add_resource(resources.UserLogin, '/login')
+api.add_resource(resources.TokenRefresh, '/token/refresh')
+api.add_resource(resources.AllUsers, '/users')
+api.add_resource(resources.SecretResource, '/secret')
 
 app.run(debug=True)
