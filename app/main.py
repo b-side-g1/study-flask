@@ -1,6 +1,8 @@
 from flask import Flask
-
+import config
 app = Flask(__name__)
+
+print(config.mysql_config)
 
 @app.route('/', methods=['GET'])
 def index():
